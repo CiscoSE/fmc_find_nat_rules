@@ -11,7 +11,7 @@ As of now ther is no option avialable on FMC for searching the NAT Rules. So Adm
 
 Sample use of script with output.
 ------------------------------------------------------------------------------------------------
-Python3 FTD_Find_NAT_Rules FMC_IPAddress usename password i IPAddress
+Python3 fmc_find_nat_rules.py FMC_IPAddress usename password i IPAddress
 
 Connected Successfully 
 
