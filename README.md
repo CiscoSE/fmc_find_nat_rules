@@ -1,3 +1,6 @@
+
+[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/CiscoSE/fmc_find_nat_rules)
+
 # FMC_Find_NAT_Ruls.py
 
 *Finds the NAT Rules by IP Address or Network Groups*
