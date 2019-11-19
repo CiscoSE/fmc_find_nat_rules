@@ -1,5 +1,5 @@
 
-[![published](https://static.production.devnetcloud.com/codeexchange/assets/images/devnet-published.svg)](https://developer.cisco.com/codeexchange/github/repo/CiscoSE/fmc_find_nat_rules)
+
 
 # FMC_Find_NAT_Ruls.py
 
@@ -54,10 +54,19 @@ GET successful for NAT Policy --> FTD-Mig-1554755781
 
 - Script is written in Python 3
 
+
+## Installation
+1, Create an empty directory
+2, cd into it and <git clone https://github.com/CiscoSE/fmc_find_nat_rules.git>, as this will work only in empty directories
+3, create the virtual environment in a subdir in the same directory
+4, Start the VE and install requirements.txt from the <fmc_find_nat_rules>
+
+Execute the script as any other Python script form console. Check the reachbility to FMC. Script is tested on FMC 6.3.
+
 ## Usage
 Script will take 5 parameters. 
 
-1. IPAddressofFMC - IP Address of FMC device. 
+1. IPAddressofFMC - IP Address / Hostname of FMC device. Please do not add any sufix to IP/hostname like "Https:"
 2. Username - username of FMC
 3. Password - Password of FMC
 4. switch g/i - If user wants to search with IP Address use "i" as a switch.
@@ -65,9 +74,7 @@ Script will take 5 parameters.
 
 5. Name/IP address - Name of the Netwrok group or IP Address to search the NAT rules.
 
-## Installation
-
-Execute the script as any other Python script form console. Check the reachbility to FMC. Script is tested on FMC 6.3.
+If you want only the NAT rule numbers without rules pls commant the line number 74 and 79
 
 ## Authors & Maintainers
 

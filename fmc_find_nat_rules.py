@@ -35,6 +35,7 @@ __license__ = "Cisco Sample Code License, Version 1.1"
 import json
 import sys
 import requests
+import argparse
 
 from urllib3.exceptions import InsecureRequestWarning
 
@@ -164,20 +165,27 @@ ObjtoFind = {'name':'none','Obj':'None'}
 api_path_fixed ="/api/fmc_config/v1/domain/"
 
 count = 1
-username = "admin"
-if len(sys.argv) > 1:
-    server = "https://" + sys.argv[1]
-if len(sys.argv) > 2:
-    username = sys.argv[2]
-password = "sf"
-if len(sys.argv) > 3:
-    password = sys.argv[3]
-if len(sys.argv) > 4:
-    WhatToFine = sys.argv[4]
-if (WhatToFine == 'g'):
-  NameToFind = sys.argv[5]
+
+
+
+parser = argparse.ArgumentParser(description='A tutorial of argparse!')
+parser.add_argument("FMCIP",help="IP Address  of FMC")
+parser.add_argument("username", help="Username of FMC")
+parser.add_argument("password", help="password of FMC")
+parser.add_argument("Switch", help="i or g",choices=['i','g'])
+parser.add_argument("IPorGroup", help="IP Address / Group to filter the NAT rules")
+
+args = parser.parse_args()
+server= "https://" + args.FMCIP
+username = args.username
+password = args.password
+WhatToFind= args.Switch
+if (WhatToFind == 'g'):
+  NameToFind = args.IPorGroup
 else:
-  IPAddToFind = sys.argv[5]
+  if (WhatToFind == 'i'):
+    IPAddToFind = args.IPorGroup  
+
 print ("\n Generating Token and Connecting \n\n")
 r = None
 headers = {'Content-Type': 'application/json'}
@@ -198,14 +206,14 @@ headers['X-auth-access-token']=auth_token
 print ("\nConnected Successfully \n")
 DomainUUID=auth_headers['DOMAIN_UUID']
 print ("\n\nDomain UUID IS: " + DomainUUID) # Check for the Domain Id and replace the URLs.
-if (WhatToFine=='i'):
+if (WhatToFind=='i'):
   api_path = "/object/networkaddresses?expanded=True&limit=1000"
   url = server + api_path_fixed + DomainUUID + api_path
   if (url[-1] == '/'):
     url = url[:-1]
   FindNetworkObj(api_path)
 else:
-  if (WhatToFine == 'o'):
+  if (WhatToFind == 'o'):
     api_path = "/object/networkgroups?expanded=True&limit=1000"
     url = server + api_path_fixed + DomainUUID + api_path
     if (url[-1] == '/'):
