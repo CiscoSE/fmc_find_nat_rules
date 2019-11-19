@@ -57,8 +57,11 @@ GET successful for NAT Policy --> FTD-Mig-1554755781
 
 ## Installation
 1, Create an empty directory
+
 2, cd into it and <git clone https://github.com/CiscoSE/fmc_find_nat_rules.git>, as this will work only in empty directories
+
 3, create the virtual environment in a subdir in the same directory
+
 4, Start the VE and install requirements.txt from the <fmc_find_nat_rules>
 
 Execute the script as any other Python script form console. Check the reachbility to FMC. Script is tested on FMC 6.3.
