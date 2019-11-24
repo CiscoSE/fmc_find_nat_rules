@@ -32,7 +32,7 @@ positional arguments:
   
   password    password of FMC
   
-  {i,g}			i or g
+  {i,g}       'i' for searching with IP Address or 'g' for Group
   
   IPorGroup   IP Address / Group to filter the NAT rules
 

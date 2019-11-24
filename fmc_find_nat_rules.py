@@ -172,7 +172,7 @@ parser = argparse.ArgumentParser(description='A tutorial of argparse!')
 parser.add_argument("FMCIP",help="IP Address / Hostname of FMC, Please do not add any suffix like-Https:")
 parser.add_argument("username", help="Username of FMC")
 parser.add_argument("password", help="password of FMC")
-parser.add_argument("Switch", help="i or g",choices=['i','g'])
+parser.add_argument("Switch", help= "'i' for searching with IP Address or 'g' for Group",choices=['i','g'])
 parser.add_argument("IPorGroup", help="IP Address / Group to filter the NAT rules")
 
 args = parser.parse_args()
