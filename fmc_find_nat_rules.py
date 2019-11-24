@@ -169,7 +169,7 @@ count = 1
 
 
 parser = argparse.ArgumentParser(description='A tutorial of argparse!')
-parser.add_argument("FMCIP",help="IP Address  of FMC")
+parser.add_argument("FMCIP",help="IP Address / Hostname of FMC, Please do not add any suffix like-Https:")
 parser.add_argument("username", help="Username of FMC")
 parser.add_argument("password", help="password of FMC")
 parser.add_argument("Switch", help="i or g",choices=['i','g'])

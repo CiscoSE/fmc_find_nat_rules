@@ -13,40 +13,51 @@ Currently there is no option available in FMC for searching the NAT Rules. So ad
 
 
 
-Sample use of script with output.
+# A tutorial of argparse! .
 ------------------------------------------------------------------------------------------------
-Python3 fmc_find_nat_rules.py FMC_IPAddress usename password i IPAddress
 
-Connected Successfully 
 
-Domain UUID IS: e276abec-e0f2-11e3-8169-6d9ed49b625f
+fmc_find_nat_rules nidhurja$ python3 fmc_find_nat_rules.py -h
 
-GET successful. Loading Network Objects --> 
+usage: fmc_find_nat_rules.py [-h] FMCIP username password {i,g} IPorGroup
 
-GET successful. Response data --> 
+A tutorial of argparse!
 
-GET successful for NAT Policy --> FTD-Mig-1554755781
- 
+positional arguments:
 
- NAT Rule Match at line number 16
+  FMCIP       IP Address / Hostname of FMC, Please do not add any suffix like-
+              Https:
+              
+  username    Username of FMC
+  
+  password    password of FMC
+  
+  {i,g}			i or g
+  
+  IPorGroup   IP Address / Group to filter the NAT rules
 
-{
-    "destinationInterface": {
-        "id": "SampleCodeGrp",
-        "type": "InterfaceGroup"
-    },
-    "dns": false,
+optional arguments:
+  -h, --help  show this help message and exit
+  
+NIDHURJA-M-433C:fmc_find_nat_rules nidhurja$ 
+
 
 -----------------------------------------------------------------------------------------------------
 
 # Features
 
 Search can be based on the IP Address or Network Group.
-The search parameter is considered as Original Source / source Group in FTD NAT rules and Original network in the Auto NAT rules.
-Scripts considers all instances of IP Addresses and Groups while searching the NAT Rules. In FMC Multiple Network Objects can be created with the same IP Address and same Network Object can be used in Multiple Network Groups.
+
+The search parameter is considered as Original Source / source Group in FMC NAT rules and Original network in the Auto NAT rules.
+
+Scripts considers all instances of IP Addresses and Groups while searching the NAT Rules and displays. 
+
 All NAT policies are searched for individual NAT Rules for the match. If Match is found scripts returns the line number and NAT Rule as well.
+
 Script is written and tested for single domain deployment of FMC.
-Technologies & Frameworks Used
+
+
+# Technologies & Frameworks Used
 FMC APIs are used.
 
 NO Third-Party products or Services are used.
@@ -64,22 +75,7 @@ Script is written in Python 3
 
 Execute the script as any other Python script form console. Check the reachability to FMC. Script is tested on FMC 6.3.
 
-# Usage 
 
-Script will take 5 parameters.
-
-IPAddressofFMC - IP Address / Hostname of FMC device. Please do not add any suffix to IP/hostname like "Https:"
-
-Username - username of FMC
-
-Password - Password of FMC
-
-switch g/i - If user wants to search with IP Address use "i" as a switch.
-If user wants to search with Network Group use "g" switch.
-
-Name/IP address - Name of the Netwrok group or IP Address to search the NAT rules.
-
-If you want only the NAT rule numbers without rules pls commant the line number 74 and 79
 
 # Authors & Maintainers
 
