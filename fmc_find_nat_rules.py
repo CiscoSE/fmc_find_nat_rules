@@ -213,7 +213,7 @@ if (WhatToFind=='i'):
     url = url[:-1]
   FindNetworkObj(api_path)
 else:
-  if (WhatToFind == 'o'):
+  if (WhatToFind == 'g'):
     api_path = "/object/networkgroups?expanded=True&limit=1000"
     url = server + api_path_fixed + DomainUUID + api_path
     if (url[-1] == '/'):
