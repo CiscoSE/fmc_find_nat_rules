@@ -17,30 +17,21 @@ Currently there is no option available in FMC for searching the NAT Rules. So ad
 ------------------------------------------------------------------------------------------------
 
 
-fmc_find_nat_rules nidhurja$ python3 fmc_find_nat_rules.py -h
+```python3 fmc_find_nat_rules.py -h```
 
 usage: fmc_find_nat_rules.py [-h] FMCIP username password {i,g} IPorGroup
 
 A tutorial of argparse!
 
-positional arguments:
-
-  FMCIP       IP Address / Hostname of FMC, Please do not add any suffix like-
-              Https:
-              
-  username    Username of FMC
-  
-  password    password of FMC
-  
-  {i,g}       'i' for searching with IP Address or 'g' for Group
-  
-  IPorGroup   IP Address / Group to filter the NAT rules
-
-optional arguments:
-  -h, --help  show this help message and exit
-  
-NIDHURJA-M-433C:fmc_find_nat_rules nidhurja$ 
-
+Positional arguments | Description
+------------ | -------------
+  FMCIP    |   IP Address / Hostname of FMC, Please do not add any suffix like- https              
+  username  |  Username of FMC
+  password  |  password of FMC
+  {i,g}     |  'i' for searching with IP Address or 'g' for Group
+  IPorGroup  | IP Address / Group to filter the NAT rules
+optional arguments |  -h, --help  show this help message and exit
+ 
 
 -----------------------------------------------------------------------------------------------------
 
@@ -65,13 +56,13 @@ NO Third-Party products or Services are used.
 Script is written in Python 3
 
 # Installation
-1, Create an empty directory
+1. Create an empty directory
 
-2, cd into it and <git clone https://github.com/CiscoSE/fmc_find_nat_rules.git>, as this will work only in empty directories
+2. cd into it and <git clone https://github.com/CiscoSE/fmc_find_nat_rules.git>, as this will work only in empty directories
 
-3, create the virtual environment in a subdir in the same directory
+3. create the virtual environment in a subdir in the same directory
 
-4, Start the VE and install requirements.txt from the <fmc_find_nat_rules>
+4. Start the VE and install requirements.txt from the <fmc_find_nat_rules>
 
 Execute the script as any other Python script form console. Check the reachability to FMC. Script is tested on FMC 6.3.
 
